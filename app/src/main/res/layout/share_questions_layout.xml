@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--TODO: 그림자 레이아웃 파일 만들기-->
+<!--TODO: 네비게이션 바 만들기-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_100">
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/q_number"
+            android:text="Q1"
+            android:textColor="@color/primary"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/q_text"
+            android:text="질문 내용"
+            android:textColor="@color/gray_900"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_below="@id/q_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+<!-- TODO: 가족 구성원에 따라 동적으로 추가 -->
+<!-- TODO : q_answer_box를 클릭했을 때 내용 보이게 토글-->
+    <LinearLayout
+        android:id="@+id/q_answer_box"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/family_name"
+            android:text="name"
+            android:textSize="24sp"
+            android:textColor="@color/gray_900"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/q_answer_text"
+            android:text="answer"
+            android:textSize="20sp"
+            android:textColor="@color/gray_800"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</LinearLayout>
