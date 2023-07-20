@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WarmFamily</string>
+    <string name="anonymous_page_title">Mail로 사랑을 전하세요</string>
+    <string name="anonymous_sender">익명으로부터 새로운 메일이 도착했어요!</string>
 </resources>

@@ -2,11 +2,11 @@ package com.example.warmfamily
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
-class MainActivity : AppCompatActivity() {
+// 질문 공유
+class ShareQuestionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.share_questions_layout)
         supportActionBar?.hide()    // 상단 액션바 숨기기
     }
 }
