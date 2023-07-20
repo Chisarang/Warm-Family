@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--TODO: 그림자 레이아웃 파일 만들기-->
+<!--TODO: 네비게이션 바 만들기-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_100">
+<!--TODO: 스크롤 뷰로 변경하기-->
+    <TextView
+        android:text="@string/anonymous_page_title"
+        android:textColor="@color/gray_800"
+        android:textSize="20sp"
+        android:layout_centerVertical="true"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/mail_title"
+            android:text="엄마 항상 고맙고 사랑해요"
+            android:textColor="@color/gray_900"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/mail_sender"
+            android:text="@string/anonymous_sender"
+            android:textColor="@color/gray_700"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_below="@id/mail_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <!-- 새로운 메일 -->
+    <TextView
+        android:text="새로운 메일이 왔어요!"
+        android:textColor="@color/gray_800"
+        android:textSize="16sp"
+        android:layout_centerVertical="true"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/mail_box_new"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!-- TODO: 스크롤 뷰로 변경하기 -->
+        <!-- TODO: 동적으로 레이아웃 추가 -->
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white">
+            <TextView
+                android:id="@+id/mail_box_new_1"
+                android:text="설거지 해줘서 고마워요~"
+                android:textSize="14sp"
+                android:textColor="@color/gray_800"
+                android:backgroundTint="@color/white"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+    </LinearLayout>
+    <!-- 내가 보낸 메일 -->
+    <TextView
+        android:text="내가 보낸 메일을 확인하세요"
+        android:textColor="@color/gray_800"
+        android:textSize="16sp"
+        android:layout_centerVertical="true"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/mail_box_i_sent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!-- TODO: 스크롤 뷰로 변경하기 -->
+        <!-- TODO: 동적으로 레이아웃 추가 -->
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:background="@color/white">
+            <TextView
+                android:id="@+id/mail_box_i_sent1"
+                android:text="츄러스 냠냠"
+                android:textSize="14sp"
+                android:textColor="@color/gray_800"
+                android:backgroundTint="@color/white"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+    <!-- 나에게 온 메일 -->
+
+</LinearLayout>
