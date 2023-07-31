@@ -63,8 +63,16 @@ class SignUpActivity : AppCompatActivity() {
                 // 포커스 되었을 때
             } else {
                 checkId(idEditText.text.toString())
-            }}
+            }
+        }
 
+        pwEditText.setOnFocusChangeListener{ view, hasFocus ->
+            if (hasFocus) {
+
+            } else {
+                checkPw(pwEditText.text.toString())
+            }
+        }
     }
 
     fun checkName(name: String?){
@@ -105,4 +113,34 @@ class SignUpActivity : AppCompatActivity() {
             idErrorTextView.visibility = View.INVISIBLE
         }
     }
+
+    fun checkPw(pw: String?){
+        // 공백 또는 null
+        if (pw.isNullOrBlank()) {
+            pwErrorTextView.visibility = View.VISIBLE
+            return
+        }
+
+        pw?.let {
+            // 글자 수 확인
+            if(pw.length < 8 || pw.length > 20){
+                pwErrorTextView.visibility = View.VISIBLE
+                return
+            }
+            val numberRegex = "\\d".toRegex()
+            val specialCharRegex = "[^!@#$%^&*-_]".toRegex()
+            val englishCharRegex = "[^a-zA-Z]".toRegex()
+
+            if (!numberRegex.containsMatchIn(pw) ||
+                !specialCharRegex.containsMatchIn(pw) ||
+                !englishCharRegex.containsMatchIn(pw) ){
+                pwErrorTextView.visibility = View.VISIBLE
+                return
+            }
+
+            pwErrorTextView.visibility = View.INVISIBLE
+        }
+    }
+
+
 }
