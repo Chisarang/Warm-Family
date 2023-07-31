@@ -50,15 +50,20 @@ class SignUpActivity : AppCompatActivity() {
         birthErrorTextView = findViewById<TextView>(R.id.birth_error_text)
 
         // EditText가 blur되었을 때 유효성 검사
-        nameEditText.setOnFocusChangeListener(object : OnFocusChangeListener {
-            override fun onFocusChange(view: View?, hasFocus: Boolean) {
-                if (hasFocus){
-                    // 포커스 되었을 때
-                }else{
-                    checkName(nameEditText.text.toString())
-                }
+        nameEditText.setOnFocusChangeListener { view, hasFocus ->
+            if (hasFocus) {
+                // 포커스 되었을 때
+            } else {
+                checkName(nameEditText.text.toString())
             }
-        })
+        }
+
+        idEditText.setOnFocusChangeListener{  view, hasFocus ->
+            if (hasFocus) {
+                // 포커스 되었을 때
+            } else {
+                checkId(idEditText.text.toString())
+            }}
 
     }
 
@@ -79,6 +84,25 @@ class SignUpActivity : AppCompatActivity() {
 
             // 조건을 통과했을 때
             nameErrorTextView.visibility = View.INVISIBLE
+        }
+    }
+
+    fun checkId(id: String?){
+        // 공백 또는 null
+        if (id.isNullOrBlank()){
+            idErrorTextView.visibility = View.VISIBLE
+            return
+        }
+
+        // 영문 또는 숫자로만, 6-12자, -_
+        id?.let {
+            val regex = "^[a-zA-Z0-9-_]{6,12}$".toRegex();
+            if (!regex.matches(id)){
+                idErrorTextView.visibility = View.VISIBLE
+                return
+            }
+            
+            idErrorTextView.visibility = View.INVISIBLE
         }
     }
 }
