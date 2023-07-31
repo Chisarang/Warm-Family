@@ -84,6 +84,8 @@ class SignUpActivity : AppCompatActivity() {
                 checkConfirmPw(pwEditText.text.toString())
             }
         }
+
+        // TODO: 생일 유효성 검사
     }
 
     fun checkName(name: String?){
