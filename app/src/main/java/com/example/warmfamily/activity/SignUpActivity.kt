@@ -7,6 +7,7 @@ import android.view.View.OnFocusChangeListener
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.core.view.isVisible
 import com.example.warmfamily.R
 import org.w3c.dom.CharacterData
 import org.w3c.dom.Text
@@ -27,6 +28,8 @@ class SignUpActivity : AppCompatActivity() {
     lateinit var pwErrorTextView: TextView
     lateinit var pwConfirmErrorTextView: TextView
     lateinit var birthErrorTextView: TextView
+
+    lateinit var pw: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,6 +74,14 @@ class SignUpActivity : AppCompatActivity() {
 
             } else {
                 checkPw(pwEditText.text.toString())
+            }
+        }
+
+        pwConfirmEditText.setOnFocusChangeListener{ view, hasFocus ->
+            if (hasFocus) {
+
+            } else {
+                checkConfirmPw(pwEditText.text.toString())
             }
         }
     }
@@ -141,6 +152,24 @@ class SignUpActivity : AppCompatActivity() {
             pwErrorTextView.visibility = View.INVISIBLE
         }
     }
+    fun checkConfirmPw(confirmPw: String?){
+        if(confirmPw.isNullOrBlank() || pw.isNullOrBlank() ){
+            pwConfirmErrorTextView.visibility = View.VISIBLE
+            return
+        }
 
+        confirmPw?.let {
+            pw = pwEditText.text.toString()
+            if (pw.isNullOrBlank()){
+                pwErrorTextView.visibility = View.VISIBLE
+                return
+            }
 
+            if (!(confirmPw == pw)){
+                pwConfirmEditText.visibility = View.VISIBLE
+            }
+
+            pwConfirmEditText.visibility = View.INVISIBLE
+        }
+    }
 }
