@@ -1,7 +1,8 @@
-package com.example.warmfamily
+package com.example.warmfamily.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.warmfamily.R
 
 // 익명 메일
 class AnonymousMailActivity : AppCompatActivity() {
